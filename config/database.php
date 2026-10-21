@@ -31,7 +31,7 @@ class Database {
             } else {
                 // Entorno Produccion (InfinityFree)
                 $host = 'sql204.infinityfree.com';
-                $db   = 'if0_42248182_Floreriatulisol';
+                $db   = 'if0_42248182_floreriatulisol';
                 $user = 'if0_42248182';
                 $pass = 'Hj5iUMKrAbiGGQ';
             }

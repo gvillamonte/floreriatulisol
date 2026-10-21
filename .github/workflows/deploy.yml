@@ -18,12 +18,12 @@ jobs:
           fetch-depth: 2
 
       - name: 🚀 Subir cambios por FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER || 'ftpupload.net' }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: htdocs/
+          server-dir: floreriatulisol.gamer.free/htdocs/
           protocol: ftp
           dangerous-clean-slate: false
           exclude: |
@@ -33,4 +33,11 @@ jobs:
             scratch/**
             .opencode/**
             diagnostico.php
-            README.md
+            .user.ini
+            .htaccess.simple
+            database/**
+            desplegar.bat
+            deploy.local.php
+            *.md
+            *.log
+            Thumbs.db

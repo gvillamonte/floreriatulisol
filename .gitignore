@@ -33,3 +33,6 @@ $RECYCLE.BIN/
 # Variables de entorno y credenciales futuras
 .env
 .env.local
+deploy.php
+desplegar.bat
+
