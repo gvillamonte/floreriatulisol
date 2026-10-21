@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Sin RewriteBase fijo: funciona tanto en /floreriatulisol/ (Alias por IP)
+    # como en floreriatulisol.test (raíz del vhost)
+
+    # Evitar indexación de carpetas
+    Options -Indexes
+
+    # Permitir acceso directo a archivos existentes y directorios
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirigir el resto al Front Controller
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Tipos MIME para WebP
+# Comentado en InfinityFree: AddType puede disparar su pagina de error 500.
+# Si tras activarlo las imagenes webp fallan, descomentar y probar de nuevo.
+# <IfModule mod_mime.c>
+#     AddType image/webp .webp
+# </IfModule>
